@@ -1,13 +1,13 @@
 {
-  "name": "stef",
+  "name": "stef.nl",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stef Geraets",
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1"
