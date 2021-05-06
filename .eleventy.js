@@ -24,6 +24,15 @@ module.exports = config => {
   config.addTransform('postcss', require('./lib/transforms/postcss'))
   config.addWatchTarget('./src/scss/')
 
+  // minify HTML
+  config.addTransform('htmlminify', require('./lib/transforms/htmlminify'))
+
+  // inline assets
+  config.addTransform('inline', require('./lib/transforms/inline'))
+
+  // js watcher
+  config.addWatchTarget('./src/js/')
+
   config.addCollection('post', collection => 
     collection
       .getFilteredByGlob('./src/articles/*.md')

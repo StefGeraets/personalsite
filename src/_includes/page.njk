@@ -1,7 +1,7 @@
 {% include "partials/htmlhead.njk" %}
 
 <header>
-  <p class="logo"><a href="/"><img src="/images/logo.svg" width="108" height="28" />Stef</a></p>
+  <p class="logo"><a href="/"><img src="/images/logo.svg" width="108" height="28" inline/>Stef</a></p>
   <nav>
     {% navlist collections.all | eleventyNavigation, page, 1 %}
   </nav>
