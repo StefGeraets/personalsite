@@ -18,7 +18,11 @@ module.exports = config => {
   
   /* --- SHORTCODES --- */
   // page navigation
-  config.addShortcode('navlist', require('./lib/shortcodes/navlist.js'))
+  config.addShortcode('navlist', require('./lib/shortcodes/navlist'))
+
+  // CSS processing
+  config.addTransform('postcss', require('./lib/transforms/postcss'))
+  config.addWatchTarget('./src/scss/')
 
   config.addCollection('post', collection => 
     collection
