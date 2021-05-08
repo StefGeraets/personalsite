@@ -1,0 +1,12 @@
+$breakpoints: (
+  md: 670px,
+  lg: 940px,
+  xl: 1260px
+);
+
+$gray-600: #4B5563;
+$gray-800: #1F2937;
+
+$accent-500: #4FD1C5;
+$accent-300: lighten($accent-500, 5%);
+$accent-700: darken($accent-500, 5%);

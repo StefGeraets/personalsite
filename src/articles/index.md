@@ -6,7 +6,7 @@ eleventyNavigation:
   key: articles
   order: 900
 pagination:
-  data: collections.post
+  data: collections.posts
   alias: pagelist
   reverse: true
   size: 3

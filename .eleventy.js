@@ -1,6 +1,11 @@
 const
   dev = global.dev = (process.env.ELEVENTY_ENV === 'development'),
   now = new Date()
+  CONTENT_GLOBS = {
+    posts: 'src/articles/*.md',
+    experiences: 'src/experiences/*.md',
+    work: 'src/work/*.md'
+  }
 
 module.exports = config => {
   /* --- PLUGINS --- */
@@ -22,7 +27,7 @@ module.exports = config => {
 
   // CSS processing
   config.addTransform('postcss', require('./lib/transforms/postcss'))
-  config.addWatchTarget('./src/scss/')
+  config.addWatchTarget('./src/assets/scss/')
 
   // minify HTML
   config.addTransform('htmlminify', require('./lib/transforms/htmlminify'))
@@ -33,10 +38,24 @@ module.exports = config => {
   // js watcher
   config.addWatchTarget('./src/js/')
 
-  config.addCollection('post', collection => 
+  // passthrough
+  config.addPassthroughCopy({'./node_modules/alpinejs/dist/alpine.js': './js/alpine.js'})
+  config.addPassthroughCopy('src/assets/fonts')
+
+  // Collections: Posts
+  config.addCollection('posts', collection => 
     collection
-      .getFilteredByGlob('./src/articles/*.md')
+      .getFilteredByGlob(CONTENT_GLOBS.posts)
       .filter(p => dev || (!p.data.draft && p.date <= now))
+  )
+
+  // Collections: Experience
+  config.addCollection('experiences', collection => 
+    collection
+      .getFilteredByGlob(CONTENT_GLOBS.experiences)
+      .sort((a, b) => {
+        return a.data.order - b.data.order
+      })
   )
 
   // 11ty defaults
@@ -44,6 +63,9 @@ module.exports = config => {
     dir: {
       input: 'src',
       output: 'dist',
+      data: 'data',
+      includes: 'includes',
+      layouts: 'layouts',
     }
   }
 }

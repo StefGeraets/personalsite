@@ -1,0 +1,19 @@
+{
+  "name": "Stef Geraets",
+  "email": "hello@stefgeraets.nl",
+  "avatar": "/images/stef.jpg",
+  "social": {
+    "github": {
+      "name": "StefGeraets",
+      "url": "https://github.com/StefGeraets/personalsite"
+    },
+    "instagram": {
+      "name": "StefGeraets.nl",
+      "url": "https://instagram.com/stefgeraets.nl/"
+    },
+    "linkedin": {
+      "name": "stefgeraets",
+      "url": "https://www.linkedin.com/in/stef-geraets/"
+    }
+  }
+}

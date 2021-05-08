@@ -1,4 +1,6 @@
-{% extends "page.njk" %}
+---
+layout: page.njk
+---
 
 {% block content %}
   <h1>{{ title }}</h1>
@@ -9,12 +11,12 @@
 
   {{ content | safe }}
 
-  {% set nextPost = collections.post | getNextCollectionItem(page) %}
+  {% set nextPost = collections.posts | getNextCollectionItem(page) %}
   {% if nextPost %}
     <p>Next article: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></p>
   {% endif %}
 
-  {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+  {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
   {% if previousPost %}
     <p>Previous article: <a href="{{previousPost.url}}">{{ previousPost.data.title }}</a></p>
   {% endif %}

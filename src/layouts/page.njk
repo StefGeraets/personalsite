@@ -1,4 +1,4 @@
-{% include "partials/htmlhead.njk" %}
+{% include "htmlhead.njk" %}
 
 <header>
   <p class="logo"><a href="/"><img src="/images/logo.svg" width="108" height="28" inline/>Stef</a></p>
@@ -14,7 +14,7 @@
 
   {{ content | safe }}
 
-  {% include "partials/pagelist.njk" %}
+  {% include "pagelist.njk" %}
 
 {% endblock %}
 </main>
@@ -25,4 +25,4 @@
   </nav>
 </footer>
 
-{% include "partials/htmlfoot.njk" %}
+{% include "htmlfoot.njk" %}
