@@ -3,9 +3,45 @@ body {
   color: $gray-800;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+.h1 {
+  font-size: $text-5xl;
+}
+
+h2, .h2 {
+  font-size: $text-4xl;
+}
+
+h3, .h3 {
+  font-size: $text-3xl;
+}
+
 p {
   margin: 0;
-} 
+}
+
+.lead {
+  font-size: $text-3xl;
+  font-weight: 500;
+  line-height: 1.4;
+}
 
 a {
   color: $accent-400;

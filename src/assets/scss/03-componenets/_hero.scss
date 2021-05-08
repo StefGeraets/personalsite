@@ -1,0 +1,110 @@
+.hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+
+  &__content {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: clamp($text-5xl, 7.5vw, 100px);
+    position: relative;
+    z-index: 1000;
+    
+    .tooltip {
+      position: relative;
+      display: inline;
+      cursor: help;
+      .icon-questionmark {
+        position: absolute;
+        display: none;
+        @include touchscreen {
+          display: inline;
+        }
+      }
+
+      &:hover,
+      &.hover {
+        .tooltip-content {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);
+          -webkit-user-select: none;
+          -webkit-touch-callout: none;
+        }
+      }
+
+      &-content {
+        visibility: hidden;
+        width: 250px;
+        background-color: $gray-100;
+        color: $gray-700;
+        text-align: center;
+        padding: 8px;
+        border-radius: 8px;
+        font-size: $text-base;
+        font-weight: 500;
+
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -125px;
+
+        opacity: 0;
+        transform: translate(0, -20px);
+        transition: all 0.3s;
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -10px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent $gray-100 transparent;
+        }
+      }
+    }
+  }
+
+  &__pretitle {
+    color: $gray-700;
+    font-size: clamp($text-base, 2vw, 24px);
+  }
+
+  .lead {
+    font-size: clamp($text-3xl, 4vw, 40px);
+    strong {
+      color: $accent-400;
+    }
+  }
+
+  &__image {
+    display: flex;
+  }
+
+  @include for-tablet-portrait-up {
+    flex-wrap: nowrap;
+    padding: 4rem 0;
+    
+    &__content {
+      flex: 1;
+    }
+    
+    &__image {
+      flex-basis: 40%;
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    &__image {
+      flex-basis: 45%;
+    }
+  }
+}

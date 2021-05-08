@@ -14,12 +14,15 @@
 @import '02-base/typography';
 @import '02-base/utilities';
 @import '02-base/layout';
+@import '02-base/elements';
+@import '02-base/animation';
 
 //
 // 	Componenets
 //------------------------------------
 @import '03-componenets/header';
 @import '03-componenets/footer';
+@import '03-componenets/hero';
 
 //
 // 	Vendor
