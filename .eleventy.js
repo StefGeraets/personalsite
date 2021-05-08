@@ -10,20 +10,20 @@ const
 module.exports = config => {
   /* --- PLUGINS --- */
   // navigation
-  config.addPlugin( require('@11ty/eleventy-navigation'))
+  // config.addPlugin( require('@11ty/eleventy-navigation'))
 
   /* --- FILTERS --- */
   // format dates
-  const dateformat = require('./lib/filters/dateformat')
-  config.addFilter('datefriendly', dateformat.friendly)
-  config.addFilter('dateymd', dateformat.ymd)
+  // const dateformat = require('./lib/filters/dateformat')
+  // config.addFilter('datefriendly', dateformat.friendly)
+  // config.addFilter('dateymd', dateformat.ymd)
 
   // format word count and read time
-  config.addFilter('readtime', require('./lib/filters/readtime'))
+  // config.addFilter('readtime', require('./lib/filters/readtime'))
   
   /* --- SHORTCODES --- */
   // page navigation
-  config.addShortcode('navlist', require('./lib/shortcodes/navlist'))
+  // config.addShortcode('navlist', require('./lib/shortcodes/navlist'))
 
   // CSS processing
   config.addTransform('postcss', require('./lib/transforms/postcss'))
@@ -37,10 +37,12 @@ module.exports = config => {
 
   // js watcher
   config.addWatchTarget('./src/js/')
+  config.addWatchTarget('./src/images/')
 
   // passthrough
   config.addPassthroughCopy({'./node_modules/alpinejs/dist/alpine.js': './js/alpine.js'})
   config.addPassthroughCopy('src/assets/fonts')
+  config.addPassthroughCopy('src/images')
 
   // Collections: Posts
   config.addCollection('posts', collection => 

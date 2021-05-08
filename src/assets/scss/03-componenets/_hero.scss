@@ -11,7 +11,7 @@
   }
 
   &__title {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: clamp($text-5xl, 7.5vw, 100px);
     position: relative;
     z-index: 1000;
@@ -48,7 +48,7 @@
         padding: 8px;
         border-radius: 8px;
         font-size: $text-base;
-        font-weight: 500;
+        font-weight: $weight-normal;
 
         position: absolute;
         top: 100%;
@@ -103,6 +103,9 @@
   }
 
   @include for-tablet-landscape-up {
+    &__title {
+      margin-bottom: 2.5rem;
+    }
     &__image {
       flex-basis: 45%;
     }

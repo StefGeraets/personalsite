@@ -19,7 +19,7 @@ eleventyNavigation:
       </div>
     </h1>
     <p class="hero__pretitle fade-in delay-400">Ik ben Stef Geraets, </p>
-    <p class="hero__lead fade-in delay-600 lead"><strong>Front-end developer</strong> en <strong>Fotograaf</strong> uit Midden-Limburg</p>
+    <p class="hero__lead fade-in delay-600 lead">Een ervaren <strong>front-end developer</strong> met passie voor <strong>Javascript</strong></p>
   </div>
   <div class="hero__image fade-in delay-800">
     <figure>
@@ -28,6 +28,9 @@ eleventyNavigation:
   </div>
 </div>
 
+{% include "work.njk" %}
+
+{% include "cv.njk" %}
 
 
 {%- for item in collections.experiences -%}

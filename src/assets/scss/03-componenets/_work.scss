@@ -1,0 +1,51 @@
+.work {
+  &__content {
+    padding: 3rem 0;
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    &--col {
+      h3 {
+        font-weight: $weight-normal;
+        font-size: clamp($text-lg, 2vw, $text-xl);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $gray-500;
+        font-size: clamp($text-base, 2vw, $text-lg);
+        line-height: $text-3xl;
+        margin: 1rem 0 2rem;
+      }
+    }
+
+    &--logos {
+      display: flex;
+      gap: 0.75rem;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    &__content {
+      gap: 3rem;
+      flex-wrap: nowrap;
+    }
+  }
+  @include for-tablet-landscape-up {
+    &__content {
+      gap: 4rem;
+
+      &--logos {
+        svg {
+          width: 48px;
+          height: 48px;
+        }
+      }
+    }
+  }
+}

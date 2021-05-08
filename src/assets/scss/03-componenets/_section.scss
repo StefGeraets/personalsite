@@ -1,0 +1,25 @@
+.section {
+  padding: 4rem 0;
+
+  &-intro {
+    max-width: 48rem;
+  }
+  &-pretitle {
+    display: inline-block;
+    color: $accent-400;
+    font-size: $text-sm;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &-title {
+    line-height: 1;
+    font-size: clamp($text-4xl, 5vw, $text-5xl);
+    margin: 1rem 0 2rem;
+  }
+
+  &-lead {
+    font-size: clamp($text-xl, 3vw, $text-2xl);
+    line-height: 1.6;
+  }
+}
