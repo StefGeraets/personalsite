@@ -1,13 +1,17 @@
 ---
-layout: page.njk
+layout: base.njk
 permalink: /
 eleventyNavigation:
   key: home
   order: 100
 ---
 
+<div class="hero">
 <h1>Home <small>hopefully</small></h1>
 <p>Test if this is the homepage because i set the permalink</p>
+</div>
+
+
 
 {%- for item in collections.experiences -%}
   <h4>{{ item.data.title }}</h4>

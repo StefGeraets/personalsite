@@ -1,7 +1,10 @@
 {
   "name": "Stef Geraets",
   "email": "hello@stefgeraets.nl",
+  "phone": "06 42 12 74 65",
+  "phoneUrl": "0031642127465",
   "avatar": "/images/stef.jpg",
+  "resume": "resume.pdf",
   "social": {
     "github": {
       "name": "StefGeraets",

@@ -1,0 +1,16 @@
+body {
+  font-family: $font-base;
+  color: $gray-800;
+}
+
+p {
+  margin: 0;
+} 
+
+a {
+  color: $accent-400;
+  text-decoration: none;
+  @include hover-focus {
+    color: $accent-600;
+  }
+}

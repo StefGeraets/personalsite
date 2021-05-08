@@ -1,0 +1,73 @@
+.header {
+  padding: 1rem 0;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 100%;
+    &-icon {
+      width: 108px;
+      height: 28px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    font-size: $text-xs;
+    line-height: 1.65;
+    padding: 0;
+    &-item {
+      display: flex;
+      flex: 0 0 40%;
+      padding: 0;
+      margin: 0;
+      a {
+        display: flex;
+        align-items: center;
+        color: $gray-500;
+        @include hover-focus {
+          color: $accent-500;
+          .icon {
+            color: currentColor;
+          }
+        }
+      }
+      .icon {
+        width: 16px;
+        height: 16px;
+        color: $gray-400;
+        path {
+          stroke-width: 1.5;
+        }
+      }
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  @include for-tablet-portrait-up {
+    justify-content: space-between;
+    .logo {
+      justify-content: flex-start;
+      flex: 1;
+    }
+
+    &__top {
+      flex: 0 0 170px;
+      &-item {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

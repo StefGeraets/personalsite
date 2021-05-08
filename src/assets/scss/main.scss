@@ -1,8 +1,8 @@
 //
 // 	Utilities
 //------------------------------------
-@import '01-utils/variables';
 @import '01-utils/functions';
+@import '01-utils/variables';
 @import '01-utils/mixins';
 
 
@@ -10,11 +10,16 @@
 // 	Base modules -- Global scope
 //------------------------------------
 @import '02-base/fonts';
+@import '02-base/normalize';
+@import '02-base/typography';
+@import '02-base/utilities';
+@import '02-base/layout';
 
 //
 // 	Componenets
 //------------------------------------
-
+@import '03-componenets/header';
+@import '03-componenets/footer';
 
 //
 // 	Vendor
@@ -22,6 +27,3 @@
 
 
 //---- 	Test
-body {
-  font-family: 'Poppins', sans-serif;
-}

@@ -1,21 +1,33 @@
-// @mixin mq($name: 'md') {
-//     $min: breakpoint-min($name, $breakpoints);
-//     @if $min {
-//         @media (min-width: $min) {
-//             @content;
-//         }
-//     } @else {
-//         @content;
-//     }
-// }
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
 
-// @mixin mq-down($name: 'md') {
-//     $min: breakpoint-min($name, $breakpoints);
-//     @if $min {
-//         @media (max-width: ($min - 1px)) {
-//             @content;
-//         }
-//     } @else {
-//         @content;
-//     }
-// }
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+      @content;
+  }
+}

@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="footer__inner container">
+    <p class="footer__item">
+      <strong>&copy; 2021</strong></br>
+      <a href="{{ site.url }}" title="{{ site.url }}" rel="me">{{ author.name }}</a>
+    </p>
+    <p class="footer__item">
+      <strong>CV 2020</strong></br>
+      <a href="" download="{{ author.resume }}" title="CV 2020 Download" rel="me">Download</a>
+    </p>
+    <p class="footer__item footer__item--full">
+      <strong>Social</strong></br>
+      <a href="{{ author.social.linkedin.url }}" target="blank" title="LinkedIn" rel="me">LinkedIn</a> / 
+      <a href="{{ author.social.github.url }}" target="blank" title="Github" rel="me">Github</a> / 
+      <a href="{{ author.social.instagram.url }}" target="blank" title="Instagram" rel="me">Instagram</a>
+    </p>
+    <p class="footer__item footer__item--full">
+      <strong>Contact</strong></br>
+      <a href="tel:{{ author.phoneUrl}}" title="Call me" rel="me">{{ author.phone }}</a> /
+      <a href="mailto:{{ author.email}}" title="Call me" rel="me">{{ author.email }}</a>
+    </p>
+
+    <p class="footer__item footer__item--right">
+      <a href="{{ site.repo }}" target="blank" class="footer__icon">
+        <img src="/images/github.svg" class="footer-icon" inline/>
+      </a>
+    </p>
+  </div>
+</footer>
