@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     &--col {
       h3 {
-        font-weight: $weight-normal;
+        font-weight: $weight-semi;
         font-size: clamp($text-lg, 2vw, $text-xl);
         letter-spacing: 1.5px;
         text-transform: uppercase;

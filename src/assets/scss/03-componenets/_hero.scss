@@ -80,6 +80,7 @@
 
   .lead {
     font-size: clamp($text-3xl, 4vw, 40px);
+    font-weight: $weight-semi;
     strong {
       color: $accent-400;
     }

@@ -4,8 +4,10 @@
   "description": "Personal site",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npm run clean && clear && ELEVENTY_ENV=development npx eleventy --serve",
+    "build": "npm run clean && ELEVENTY_ENV=production npx eleventy",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "Stef Geraets",

@@ -6,12 +6,13 @@
   <meta name="description" content="{{ site.description }}">
 
   <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
-  <link rel="preload" href="{{ '/assets/fonts/poppins-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ '/assets/fonts/poppins-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'assets/fonts/poppins-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'assets/fonts/poppins-semibold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'assets/fonts/poppins-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="css/main.css" />
 
-  <script preload defer src="/js/alpine.js"></script>
+  <script preload defer src="js/alpine.js"></script>
 </head>
 <body>
 
