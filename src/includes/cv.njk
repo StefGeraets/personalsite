@@ -2,21 +2,38 @@
   <div class="cv__intro section-intro">
     <span class="section-pretitle">Curriculum Vitae</span>
     <h2 class="section-title">Ik heb aan meer dan 50 websites gewerkt voor toffe klanten</h2>
-    <p class="section-lead">Mijn focus ligt op front-end development. De laatste jaren gewerkt met frameworks als VueJS en de techniek welke achter <a href="https://jamstack.org/" target="blank">JAMstack</a> zit</p>
+    <p class="section-lead">Gewerkt aan gave projecten en toffe klanten zoals Wickey, MajorRum, Bruynzeel en BAM Materieelverhuur</p>
   </div>
   <div class="cv__content">
-    <div class="cv__content--col">
+    <div class="cv__content--col first">
       {% include "experiencelist.njk" %}
+      <div class="cv__education">
+        <h3>Opleidingen</h3>
+        <article class="exp">
+          <div class="exp__toggle static">
+            <img src="images/experiences/zuyd.jpeg" alt="Hogeschool Zuyd" class="exp__toggle--img"/>
+            <div class="exp__toggle--content">
+              <h4>HBO-ICT Information Management (Bachelor's degree)</h4>
+              <p class="exp__toggle--content-place">Hogeschool Zuyd, Sittard/Heerlen</p>
+              <p class="exp__toggle--content-date">2007 - 2016</p>
+            </div>
+          </div>
+        </article>
+        <article class="exp">
+          <div class="exp__toggle static">
+            <img src="images/experiences/gilde_opleidingen.jpeg" alt="Hogeschool Zuyd" class="exp__toggle--img"/>
+            <div class="exp__toggle--content">
+              <h4>ICT-beheerder (Diploma behaald)</h4>
+              <p class="exp__toggle--content-place">Gilde Opleidingen, Roermond</p>
+              <p class="exp__toggle--content-date">2003 - 2007</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
 
-    <div class="cv__content--col">
+    <div class="cv__content--col second">
       <h3>E-commerce</h3>
-      <p>3+ jaar ervaring in de e-commerce wereld. Voornamelijk gewerkt met Magento, maar ook nieuwere platformen als Shopware. Zo heb ik samen met collega's de eerste VueJS PWA Magento webshop van Nederland ontwikkeld, <a href="https://majorrum.com" target="blank">Majorrum</a>.</p>
-      <div class="cv__content--logos">
-        <img src="/images/brands/magento-2.svg" inline title="Magento"/>
-        <img src="/images/brands/vuestorefront.svg" inline title="VueStorefront"/>
-        <img src="/images/brands/shopware.svg" inline title="Shopware"/>
-      </div>
     </div>
   </div>
 </section>

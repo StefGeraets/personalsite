@@ -1,6 +1,6 @@
 ---
 title: Juist
-role: Magento 2 front-end developer en Project Manager
+role: Magento 2 Senior Front-end Developer en Project Manager
 office: Juist
 place: Boekel
 order: 1

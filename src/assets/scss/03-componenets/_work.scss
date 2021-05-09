@@ -2,9 +2,10 @@
   &__content {
     padding: 3rem 0;
     display: flex;
-    gap: 5rem;
     flex-wrap: wrap;
+    justify-content: space-between;
     &--col {
+      margin-bottom: 5rem;
       h3 {
         font-weight: $weight-semi;
         font-size: clamp($text-lg, 2vw, $text-xl);
@@ -22,24 +23,24 @@
 
     &--logos {
       display: flex;
-      gap: 0.75rem;
       svg {
         width: 40px;
         height: 40px;
+        margin-right: 0.75rem;
       }
     }
   }
 
   @include for-tablet-portrait-up {
     &__content {
-      gap: 3rem;
       flex-wrap: nowrap;
+      &--col {
+        flex-basis: 47%;
+      }
     }
   }
   @include for-tablet-landscape-up {
     &__content {
-      gap: 4rem;
-
       &--logos {
         svg {
           width: 48px;

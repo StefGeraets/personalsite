@@ -1,0 +1,33 @@
+.cv {
+  &__content {
+    padding: 3rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    &--col {
+      &.first {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &__education {
+    h3 {
+      font-weight: $weight-semi;
+      font-size: $text-3xl;
+      padding: 1.5rem 0 3rem;
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    &__content {
+      // gap: 4rem;
+      flex-wrap: nowrap;
+      &--col {
+        &.first {
+          margin: 0 4rem 0 0;
+          flex: 0 0 55%;
+        }
+      }
+    }
+  }
+}

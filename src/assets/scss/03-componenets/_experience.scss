@@ -4,12 +4,16 @@
   border-bottom: 1px solid $gray-200;
   position: relative;
 
+  &.last-child,
+  &:last-child {
+    border-bottom: none;
+  }
+
   &__toggle {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     text-align: left;
-    gap: 4rem;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -19,6 +23,7 @@
       background: $white;
       border-radius: 12px;
       max-width: 64px;
+      height: 64px;
       box-shadow: $box-shadow-md;
       -webkit-backface-visibility: hidden;
       transform: scale(1);
@@ -27,6 +32,10 @@
     }
 
     &--content {
+      margin-left: 2rem;
+      @include for-tablet-landscape-up {
+        margin-left: 4rem;
+      }
       h4 {
         font-size: $text-lg;
         font-weight: $weight-semi;
@@ -49,7 +58,7 @@
         color: $gray-600;
         font-size: $text-sm;
         display: block;
-        max-width: 20rem;
+        max-width: 50vw;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -57,6 +66,10 @@
         visibility: visible;
         transition: all 150ms ease;
         will-change: opacity, visibility;
+
+        @include for-tablet-landscape-up {
+          max-width: 20rem;
+        }
       }
     }
 
@@ -68,12 +81,20 @@
         box-shadow: $box-shadow-lg;
       }
     }
+
+    &.static {
+      cursor: default;
+      .exp__toggle--img {
+        box-shadow: $box-shadow-md;
+        transform: scale(1);
+      }
+    }
   }
   &__content {
     overflow: hidden;
     max-height: 0;
     transition: all 150ms ease-in-out;
-    padding-left: 128px;
+    padding-left: 96px;
     font-size: $text-sm;
     color: $gray-700;
     opacity: 0;
@@ -83,6 +104,10 @@
       opacity 250ms ease 150ms,
       transform 250ms ease 150ms ease-out;
     will-change: max-height, opacity, transform;
+
+    @include for-tablet-landscape-up {
+      padding-left: 128px;
+    }
 
     &--tech {
       padding: 1rem 0 0;
@@ -107,12 +132,12 @@
         padding-bottom: 0.5rem;
 
         &:before {
-          content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-          color: $gray-400; /* Change the color */
-          font-weight: bold; /* If you want it to be bold */
-          display: inline-block; /* Needed to add space between the bullet and the text */
-          width: 1rem; /* Also needed for space (tweak if needed) */
-          margin-left: -1rem; /* Also needed for space (tweak if needed) */
+          content: "\2022";
+          color: $gray-400;
+          font-weight: bold;
+          display: inline-block;
+          width: 1rem;
+          margin-left: -1rem;
         }
       }
     }
@@ -126,10 +151,13 @@
     border: none;
     color: $gray-300;
     cursor: pointer;
-    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 1.5rem;
 
     &.down {
       transform: rotate(180deg);
+      padding: 0 1.5rem 0 0;
     }
 
     svg {

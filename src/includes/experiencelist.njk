@@ -3,7 +3,7 @@
   <article 
     class="exp"
     x-data="{selected:null}"
-    x-bind:class="selected == {{ experienceCount }} ? 'open' : ''">
+    x-bind:class="[selected == {{ experienceCount }} ? 'open' : '', {{ experienceCount }} == {{ collections.experiences.length - 1}} ? 'last-child' : '']">
     <button 
       class="exp__toggle"
       @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null">

@@ -6,7 +6,7 @@ office: Dline
 place: Helden
 tech: Javascript, jQuery, ServiceWorker, HTML, CSS (Less/Scss), Bootstrap, Sketch, Git
 fromDate: Augustus 2016
-toDate: November 2018
+toDate: April 2018
 image: images/experiences/dline.png
 ---
 
