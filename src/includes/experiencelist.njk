@@ -1,0 +1,35 @@
+{% set experienceCount = 0 %}
+{%- for item in collections.experiences -%}
+  <article 
+    class="exp"
+    x-data="{selected:null}"
+    x-bind:class="selected == {{ experienceCount }} ? 'open' : ''">
+    <button 
+      class="exp__toggle"
+      @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null">
+      <img src="{{ item.data.image }}" alt="{{item.data.title}}" />
+      <div class="exp__toggle--content">
+        <h4>{{ item.data.role }}</h4>
+        <p class="exp__toggle--place">{{ item.data.office }}, {{ item.data.place }}</p>
+        {% if item.data.fromDate %}
+          <p class="exp__toggle--date">{{ item.data.fromDate }} - {{ item.data.toDate}}</p>
+        {% endif %}
+        {% if item.data.tech %}
+          <div class="exp__toggle--tech">
+          {{ item.data.tech}}
+          </div>
+        {% endif %}
+      </div>
+    </button>
+    <div 
+      class="exp__content"
+      x-ref="container{{ experienceCount }}" 
+      x-bind:style="selected == {{ experienceCount }} ? 'max-height: ' + $refs.container{{ experienceCount }}.scrollHeight + 'px' : ''">
+      {% if item.data.tech %}
+        <em>{{ item.data.tech}}</em>
+      {% endif %}
+      {{ item.templateContent | safe }}
+    </div>
+  </article>
+  {% set experienceCount = experienceCount + 1 %}
+{%- endfor -%}
