@@ -7,15 +7,15 @@
     <button 
       class="exp__toggle"
       @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null">
-      <img src="{{ item.data.image }}" alt="{{item.data.title}}" />
+      <img src="{{ item.data.image }}" alt="{{item.data.title}}" class="exp__toggle--img"/>
       <div class="exp__toggle--content">
-        <h4>{{ item.data.role }}</h4>
-        <p class="exp__toggle--place">{{ item.data.office }}, {{ item.data.place }}</p>
+        <h4>{{ item.data.role | safe }}</h4>
+        <p class="exp__toggle--content-place">{{ item.data.office }}, {{ item.data.place }}</p>
         {% if item.data.fromDate %}
-          <p class="exp__toggle--date">{{ item.data.fromDate }} - {{ item.data.toDate}}</p>
+          <p class="exp__toggle--content-date">{{ item.data.fromDate }} - {{ item.data.toDate}}</p>
         {% endif %}
         {% if item.data.tech %}
-          <div class="exp__toggle--tech">
+          <div class="exp__toggle--content-tech">
           {{ item.data.tech}}
           </div>
         {% endif %}
@@ -26,10 +26,24 @@
       x-ref="container{{ experienceCount }}" 
       x-bind:style="selected == {{ experienceCount }} ? 'max-height: ' + $refs.container{{ experienceCount }}.scrollHeight + 'px' : ''">
       {% if item.data.tech %}
-        <em>{{ item.data.tech}}</em>
+        <div class="exp__content--tech">
+          <strong>Tooling</strong>
+          <p>{{ item.data.tech}}</p>
+        </div>
       {% endif %}
-      {{ item.templateContent | safe }}
+      <div class="exp__content--list">
+        <strong>Werkzaamheden &amp; verantwoordelijkheden</strong>
+        {{ item.templateContent | safe }}
+      </div>
     </div>
+    <button 
+      class="exp__toggleArrow"
+      @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null"
+      x-bind:class="selected == {{ experienceCount }} ? 'up' : 'down'">
+      <svg class="icon icon-up" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+      </svg>
+    </button>
   </article>
   {% set experienceCount = experienceCount + 1 %}
 {%- endfor -%}

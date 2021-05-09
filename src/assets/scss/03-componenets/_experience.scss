@@ -1,0 +1,170 @@
+.exp {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid $gray-200;
+  position: relative;
+
+  &__toggle {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: left;
+    gap: 4rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &--img {
+      background: $white;
+      border-radius: 12px;
+      max-width: 64px;
+      box-shadow: $box-shadow-md;
+      -webkit-backface-visibility: hidden;
+      transform: scale(1);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+      will-change: transform, box-shadow;
+    }
+
+    &--content {
+      h4 {
+        font-size: $text-lg;
+        font-weight: $weight-semi;
+        line-height: 1.5;
+        margin-bottom: 0.25rem;
+      }
+
+      &-place,
+      &-date {
+        color: $gray-700;
+        line-height: 1.25;
+      }
+
+      &-date {
+        font-size: $text-sm;
+        margin-bottom: 0.25rem;
+      }
+
+      &-tech {
+        color: $gray-600;
+        font-size: $text-sm;
+        display: block;
+        max-width: 20rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        opacity: 1;
+        visibility: visible;
+        transition: all 150ms ease;
+        will-change: opacity, visibility;
+      }
+    }
+
+
+    &:hover {
+      .exp__toggle--img {
+        image-rendering:optimizeQuality;
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: $box-shadow-lg;
+      }
+    }
+  }
+  &__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: all 150ms ease-in-out;
+    padding-left: 128px;
+    font-size: $text-sm;
+    color: $gray-700;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 
+      max-height 150ms ease, 
+      opacity 250ms ease 150ms,
+      transform 250ms ease 150ms ease-out;
+    will-change: max-height, opacity, transform;
+
+    &--tech {
+      padding: 1rem 0 0;
+    }
+    &--list {
+      padding: 2rem 0 0;
+    }
+    strong {
+      display: block;
+      font-weight: $weight-semi;
+      color: $gray-800;
+      margin-bottom: 0.25rem;
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      list-style: none;
+      li {
+        color: $gray-700;
+        line-height: $text-xl;
+        padding-bottom: 0.5rem;
+
+        &:before {
+          content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: $gray-400; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1rem; /* Also needed for space (tweak if needed) */
+          margin-left: -1rem; /* Also needed for space (tweak if needed) */
+        }
+      }
+    }
+  }
+
+  &__toggleArrow {
+    position: absolute;
+    bottom: -14px;
+    right: 0;
+    background: $white;
+    border: none;
+    color: $gray-300;
+    cursor: pointer;
+    padding: 0 1rem;
+
+    &.down {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 150ms ease; 
+    }
+
+    &:hover {
+      color: $gray-500;
+      svg {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &.open {
+    .exp {
+      &__toggle {
+        &--img {
+          transform: scale(1.1) rotate(-5deg);
+          box-shadow: $box-shadow-lg;
+          image-rendering:optimizeQuality;
+        }
+        &--content {
+          &-tech {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+      }
+      &__content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
