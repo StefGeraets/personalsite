@@ -9,3 +9,22 @@ figure {
   text-align: center;
   margin: 0 auto;
 }
+
+.btn-primary {
+  width: auto;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  justify-self: flex-start;
+  align-self: flex-start;
+  color: $white;
+  background: $accent-500;
+  font-weight: $weight-semi;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  transition: all 200ms ease;
+  
+  @include hover-focus {
+    color: $white;
+    background: $accent-400;
+  }
+}
