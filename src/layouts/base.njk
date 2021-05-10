@@ -3,29 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ site.description }}">
 
-  <title>{%- if title -%}{{ title }} | {{ site.title }}{%- else -%}{{ site.title }}{%- endif -%}</title>
-  <link rel="canonical" href="https://stefgeraets.nl" />
+  <title>{{ site.title }}</title>
+  
   <link rel="preload" href="{{ 'assets/fonts/poppins-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'assets/fonts/poppins-semibold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'assets/fonts/poppins-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/favicon/apple-touch-icon.png' | url }}">
-  <link rel="icon" type="image/png" href="{{ '/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
-  <link rel="icon" type="image/png" href="{{ '/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
-  <link rel="shortcut icon" href="{{ '/images/favicon/favicon.svg' | url }}">
-  <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
-  <meta name="theme-color" content="#1a1a1a">
-
-  <link rel="stylesheet" href="css/main.css" />
-  {# <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="styles.css"></noscript> #}
-
-  {# <script preload defer src="js/alpine.js"></script> #}
+  <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}" />
+  
+  {% include "meta.njk" %}
 </head>
 <body>
-
+  <div hidden>{% iconsprite %}</div>
+  
   <div class="layout" role="document">
     {% include "header.njk" %}
 
@@ -36,7 +27,12 @@
     {% include "footer.njk" %}
   </div>
 
-  <script type="module" src="/js/main.js"></script>
+  <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
+  <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/serviceworker.js')
+      }
+  </script>
 
 </body>
 </html>
