@@ -10,4 +10,6 @@ toDate: nu
 image: images/experiences/stefgeraets.png
 ---
 
-StefGeraets.nl
+- Fotografie. Voornamelijk bruiloften en festivals
+- Ontwikkeling en beheer van ERP systeem voor Vestjens Stro BV gebaseerd op Ruby on Rails
+- Verschillende websites voor kleine bedrijven

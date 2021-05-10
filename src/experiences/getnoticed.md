@@ -10,4 +10,7 @@ toDate: Oktober 2020
 image: images/experiences/getnoticed.png
 ---
 
-GetNoticed
+- Ontwikkelen van modern start thema voor Magento 2 genaamd [Orange](https://orange.demo.lakefields.nl/)
+- Mee ontwikkeld aan de eerste PWA VueJS Magento 2 shop van Nederland - [Majorrum](https://majorrum.com)
+- Webpack optimalisatie voor een SAAS oplossing voor snelheidswinst
+- Hackathons georganiseerd, zowel intern als extern

@@ -10,4 +10,6 @@ toDate: Oktober 2018
 image: images/experiences/est.png
 ---
 
-Europees Schutters Treffen
+- Front-end development evenement website [est2018.eu](http://www.est2018.nl/)
+- Foto en media organiseren voor, tijdens en na evenement
+- Communicatie/marketing uitwerken

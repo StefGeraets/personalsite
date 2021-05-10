@@ -10,4 +10,7 @@ toDate: April 2018
 image: images/experiences/dline.png
 ---
 
-Dline
+- Nieuwe designs voor meerdere webshops op intern ontwikkeld systeem
+- Front-end vernieuwen en gebruik maken van Bootstrap
+- Less compiler middels Gulp
+- Nieuw design [Callowfit.store](https://www.callowfit.store/nl)

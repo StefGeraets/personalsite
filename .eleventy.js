@@ -67,9 +67,12 @@ module.exports = config => {
     dir: {
       input: 'src',
       output: 'dist',
-      data: 'data',
       includes: 'includes',
       layouts: 'layouts',
-    }
+      data: 'data',
+    },
+    templateFormats: ['njk', 'md', '11ty.js'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
   }
 }

@@ -10,4 +10,6 @@ toDate: nu
 image: images/experiences/vestjens.png
 ---
 
-Vestjens
+- Product van Afstudeer opdracht HBO-ICT Information Manegement
+- Custom ERP systeem ontworpen en ontwikkeld op basis van Ruby on Rails
+- Functioneel ontwerp en ERD

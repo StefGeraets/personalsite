@@ -2,7 +2,9 @@
   "name": "stef.nl",
   "version": "1.0.0",
   "description": "Personal site",
-  "main": "index.js",
+  "browselist": [
+    "defaults"
+  ],
   "scripts": {
     "start": "npm run clean && clear && ELEVENTY_ENV=development npx eleventy --serve",
     "build": "npm run clean && ELEVENTY_ENV=production npx eleventy",

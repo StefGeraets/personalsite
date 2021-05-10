@@ -10,7 +10,7 @@ toDate: nu
 image: images/experiences/juist.png
 ---
 
-- lijst
-- items
-- hier
-- daarom
+- Project Verantwoordelijke voor Magento 2 projecten
+- Zorg gedragen over projecten tijdens overname Lakefields
+- Technisch lead van meerdere projecten
+- Altijd klantgericht gewerkt.
