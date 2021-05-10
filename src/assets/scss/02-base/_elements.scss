@@ -16,7 +16,7 @@ figure {
   border: none;
   justify-self: flex-start;
   align-self: flex-start;
-  color: $gray-800;
+  color: $white;
   background: $accent-500;
   font-weight: $weight-semi;
   border-radius: 0.25rem;
@@ -24,7 +24,7 @@ figure {
   transition: all 200ms ease;
   
   @include hover-focus {
-    color: $gray-700;
+    color: $white;
     background: $accent-400;
   }
 }
