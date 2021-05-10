@@ -3,9 +3,12 @@
   <article 
     class="exp"
     x-data="{selected:null}"
+    :aria-expanded="selected == {{ experienceCount }} ? 'true' : 'false'"
     x-bind:class="[selected == {{ experienceCount }} ? 'open' : '', {{ experienceCount }} == {{ collections.experiences.length - 1}} ? 'last-child' : '']">
     <button 
       class="exp__toggle"
+      role="button"
+      aria-label="Toggle experience"
       @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null">
       <img src="{{ item.data.image }}" alt="{{item.data.title}}" class="exp__toggle--img"/>
       <div class="exp__toggle--content">
@@ -24,6 +27,7 @@
     <div 
       class="exp__content"
       x-ref="container{{ experienceCount }}" 
+      :aria-expanded="selected == {{experienceCount }} ? 'true' : 'false'"
       x-bind:style="selected == {{ experienceCount }} ? 'max-height: ' + $refs.container{{ experienceCount }}.scrollHeight + 'px' : ''">
       {% if item.data.tech %}
         <div class="exp__content--tech">
@@ -38,6 +42,8 @@
     </div>
     <button 
       class="exp__toggleArrow"
+      role="button"
+      aria-label="Toggle experience"
       @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null"
       x-bind:class="selected == {{ experienceCount }} ? 'up' : 'down'">
       <svg class="icon icon-up" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

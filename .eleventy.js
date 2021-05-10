@@ -42,6 +42,7 @@ module.exports = config => {
   // passthrough
   config.addPassthroughCopy({'./node_modules/alpinejs/dist/alpine.js': './js/alpine.js'})
   config.addPassthroughCopy('src/assets/fonts')
+  config.addPassthroughCopy('src/assets/Stef_Geraets-Senior_Front-end_Developer.pdf')
   config.addPassthroughCopy('src/images')
 
   // Collections: Posts
