@@ -1,5 +1,7 @@
 // import * as theme from './lib/theme.js'
 
+import 'alpinejs'
+
 document.documentElement.classList.remove('no-js')
 
 const toolTipElement = document.querySelector('.tooltip')

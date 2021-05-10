@@ -5,11 +5,15 @@
   "browselist": [
     "defaults"
   ],
-  "scripts": {
-    "start": "npm run clean && clear && ELEVENTY_ENV=development npx eleventy --serve",
-    "build": "npm run clean && ELEVENTY_ENV=production npx eleventy",
+  "scripts": {    
+    "start": "npm run dev",
+    "dev": "run-s clean eleventy:dev --print-label",
+    "build": "run-s clean eleventy:prod --print-label",
+    "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
+    "clean": "rm -rf dist",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "clean": "rm -rf dist"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Stef Geraets",
@@ -20,20 +24,23 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-navigation": "^0.2.0",
+    "@11ty/eleventy-img": "^0.8.3",
+    "@11ty/eleventy-plugin-rss": "^1.1.1",
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.1",
     "alpinejs": "^2.8.2",
-    "cssnano": "^5.0.2",
+    "babel-loader": "^8.2.2",
+    "clean-css": "^5.1.2",
+    "critical": "^3.0.1",
+    "cross-env": "^7.0.3",
+    "cssesc": "^3.0.0",
     "html-minifier": "^4.0.0",
-    "imagemin": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^9.0.0",
-    "inline-source": "^7.2.0",
-    "postcss": "^8.2.13",
-    "postcss-advanced-variables": "^3.0.1",
-    "postcss-nested": "^5.0.5",
-    "postcss-scss": "^3.0.5",
-    "rollup": "^2.47.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "markdown-it": "^12.0.6",
+    "memfs": "^3.2.2",
+    "node-sass": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "svg-sprite": "^1.5.0",
+    "webpack": "^5.37.0"
   }
 }

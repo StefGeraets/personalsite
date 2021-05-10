@@ -1,57 +1,59 @@
-const
-  dev = global.dev = (process.env.ELEVENTY_ENV === 'development'),
-  now = new Date()
-  CONTENT_GLOBS = {
-    posts: 'src/articles/*.md',
-    experiences: 'src/experiences/*.md',
-    work: 'src/work/*.md'
-  }
+const pluginRss = require('@11ty/eleventy-plugin-rss')
+const markdownIt = require('markdown-it')
+
+const transforms = require('./utils/transforms.js')
+const shortcodes = require('./utils/shortcodes.js')
+const iconsprite = require('./utils/iconsprite.js')
+
+const CONTENT_GLOBS = { experiences: 'src/experiences/*.md' }
 
 module.exports = config => {
-  /* --- PLUGINS --- */
-  // navigation
-  // config.addPlugin( require('@11ty/eleventy-navigation'))
-
-  /* --- FILTERS --- */
-  // format dates
-  // const dateformat = require('./lib/filters/dateformat')
-  // config.addFilter('datefriendly', dateformat.friendly)
-  // config.addFilter('dateymd', dateformat.ymd)
-
-  // format word count and read time
-  // config.addFilter('readtime', require('./lib/filters/readtime'))
   
-  /* --- SHORTCODES --- */
-  // page navigation
-  // config.addShortcode('navlist', require('./lib/shortcodes/navlist'))
+  // Plugins
+  config.addPlugin(pluginRss)
+  
+  // Transforms
+  Object.keys(transforms).forEach((transformName) => {
+    config.addTransform(transformName, transforms[transformName])
+  })
 
-  // CSS processing
-  config.addTransform('postcss', require('./lib/transforms/postcss'))
-  config.addWatchTarget('./src/assets/scss/')
+  // Shortcodes
+  Object.keys(shortcodes).forEach((shortcodeName) => {
+    config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+  })
+
+  // Icon Sprite
+  config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
+  
+  // Asset Watch Targets
+  config.addWatchTarget('./src/assets')
 
   // minify HTML
-  config.addTransform('htmlminify', require('./lib/transforms/htmlminify'))
+  config.addTransform('htmlminify', require('./utils/transforms/htmlminify'))
 
-  // inline assets
-  config.addTransform('inline', require('./lib/transforms/inline'))
-
-  // js watcher
-  config.addWatchTarget('./src/js/')
-  config.addWatchTarget('./src/images/')
-
-  // passthrough
-  config.addPassthroughCopy({'./node_modules/alpinejs/dist/alpine.js': './js/alpine.js'})
-  config.addPassthroughCopy('src/assets/fonts')
-  config.addPassthroughCopy('src/site.webmanifest')
-  config.addPassthroughCopy('src/assets/Stef_Geraets-Senior_Front-end_Developer.pdf')
-  config.addPassthroughCopy('src/images')
-
-  // Collections: Posts
-  config.addCollection('posts', collection => 
-    collection
-      .getFilteredByGlob(CONTENT_GLOBS.posts)
-      .filter(p => dev || (!p.data.draft && p.date <= now))
+  // Markdown
+  config.setLibrary(
+    'md',
+    markdownIt({
+      html: true,
+      breaks: true,
+      linkify: true,
+      typographer: true
+    })
   )
+  
+  // Layouts
+  config.addLayoutAlias('base', 'base.njk')
+
+  // Pass-through files
+  config.addPassthroughCopy('src/robots.txt')
+  config.addPassthroughCopy('src/site.webmanifest')
+  config.addPassthroughCopy('src/assets/fonts')
+  config.addPassthroughCopy('src/assets/images')
+  config.addPassthroughCopy('src/assets/Stef_Geraets-Senior_Front-end_Developer.pdf')
+
+  // Deep-Merge
+  config.setDataDeepMerge(true)
 
   // Collections: Experience
   config.addCollection('experiences', collection => 
