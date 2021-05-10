@@ -4,6 +4,10 @@
   &-intro {
     max-width: 48rem;
   }
+  &-center {
+    margin: 0 auto;
+    text-align: center;
+  }
   &-pretitle {
     display: inline-block;
     color: $accent-400;
