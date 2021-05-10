@@ -1,10 +1,10 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const markdownIt = require('markdown-it')
 
+const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
-const filters = require('./utils/filters.js')
 
 const CONTENT_GLOBS = { experiences: 'src/experiences/*.md' }
 
