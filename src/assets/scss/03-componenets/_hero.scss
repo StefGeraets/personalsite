@@ -88,6 +88,7 @@
 
   &__image {
     display: flex;
+    flex-basis: 100%;
   }
 
   @include for-tablet-portrait-up {
