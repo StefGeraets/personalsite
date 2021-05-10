@@ -5,7 +5,7 @@
   "browselist": [
     "defaults"
   ],
-  "scripts": {    
+  "scripts": {
     "start": "npm run dev",
     "dev": "run-s clean eleventy:dev --print-label",
     "build": "run-s clean eleventy:prod --print-label",
@@ -36,6 +36,7 @@
     "cross-env": "^7.0.3",
     "cssesc": "^3.0.0",
     "html-minifier": "^4.0.0",
+    "luxon": "^1.26.0",
     "markdown-it": "^12.0.6",
     "memfs": "^3.2.2",
     "node-sass": "^6.0.0",

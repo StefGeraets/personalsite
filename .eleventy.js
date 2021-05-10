@@ -4,6 +4,7 @@ const markdownIt = require('markdown-it')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
+const filters = require('./utils/filters.js')
 
 const CONTENT_GLOBS = { experiences: 'src/experiences/*.md' }
 
@@ -11,6 +12,11 @@ module.exports = config => {
   
   // Plugins
   config.addPlugin(pluginRss)
+
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    config.addFilter(filterName, filters[filterName])
+  })
   
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
@@ -27,9 +33,6 @@ module.exports = config => {
   
   // Asset Watch Targets
   config.addWatchTarget('./src/assets')
-
-  // minify HTML
-  config.addTransform('htmlminify', require('./utils/transforms/htmlminify'))
 
   // Markdown
   config.setLibrary(
@@ -50,7 +53,7 @@ module.exports = config => {
   config.addPassthroughCopy('src/site.webmanifest')
   config.addPassthroughCopy('src/assets/fonts')
   config.addPassthroughCopy('src/assets/images')
-  config.addPassthroughCopy('src/assets/Stef_Geraets-Senior_Front-end_Developer.pdf')
+  config.addPassthroughCopy('src/assets/docs/Stef_Geraets-Senior_Front-end_Developer.pdf')
 
   // Deep-Merge
   config.setDataDeepMerge(true)
