@@ -9,7 +9,7 @@ const { render } = require('node-sass')
 
 const isProd = process.env.ELEVENTY_ENV === 'production'
 
-module.exports = {
+module.exports = class {
   // Webpack config
   async data() {
     const entryPath = path.join(__dirname, `/${ENTRY_FILE_NAME}`)
@@ -49,7 +49,7 @@ module.exports = {
       eleventyExcludeFromCollections: true,
       webpackConfig
     }
-  },
+  }
 
   compile(webpackConfig) {
     const compiler = webpack(webpackConfig)
@@ -76,7 +76,7 @@ module.exports = {
         )
       })
     })
-  },
+  }
 
   async render({ webpackConfig }) {
     try {
