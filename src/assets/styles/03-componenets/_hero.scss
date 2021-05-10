@@ -20,7 +20,7 @@
       position: relative;
       display: inline;
       cursor: help;
-      .icon-questionmark {
+      .icon {
         position: absolute;
         display: none;
         @include touchscreen {

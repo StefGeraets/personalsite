@@ -7,7 +7,7 @@ place: Buggenum
 tech: Wordpress, Eleventy, Javascript (ES6), HTML, CSS (Sass), Canon
 fromDate: Begin 2008
 toDate: nu
-image: images/experiences/stefgeraets.png
+image: assets/images/experiences/stefgeraets.png
 ---
 
 - Fotografie. Voornamelijk bruiloften en festivals

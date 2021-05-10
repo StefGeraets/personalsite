@@ -7,7 +7,7 @@ place: Helden
 tech: Javascript, jQuery, ServiceWorker, HTML, CSS/Less, Bootstrap, Sketch, Git
 fromDate: Augustus 2016
 toDate: April 2018
-image: images/experiences/dline.png
+image: assets/images/experiences/dline.png
 ---
 
 - Nieuwe designs voor meerdere webshops op intern ontwikkeld systeem

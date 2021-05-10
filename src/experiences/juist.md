@@ -7,7 +7,7 @@ order: 1
 tech: Javascript (ES6), HTML (phtml), XML, CSS (Less/Sass), Magento, Git, Figma, Gulp, Grunt, Webpack
 fromDate: Oktober 2020
 toDate: nu
-image: images/experiences/juist.png
+image: assets/images/experiences/juist.png
 ---
 
 - Projectverantwoordelijke voor Magento 2 projecten

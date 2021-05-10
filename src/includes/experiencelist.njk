@@ -10,7 +10,10 @@
       role="button"
       aria-label="Toggle experience"
       @click="selected !== {{ experienceCount }} ? selected = {{ experienceCount }} : selected = null">
-      <img src="{{ item.data.image }}" width="64" height="64" alt="{{item.data.title}}" class="exp__toggle--img"/>
+      <div class="exp__toggle--img">
+        {% image "./src/" + item.data.image, item.data.title, 64 %}
+      </div>
+      {# <img src="{{ item.data.image }}" width="64" height="64" alt="{{item.data.title}}" class="exp__toggle--img"/> #}
       <div class="exp__toggle--content">
         <h4>{{ item.data.role | safe }}</h4>
         <p class="exp__toggle--content-place">{{ item.data.office }}, {{ item.data.place }}</p>

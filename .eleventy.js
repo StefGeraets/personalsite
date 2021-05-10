@@ -5,6 +5,7 @@ const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
+const { imageShortcode } = require('./utils/shortcodes.js')
 
 const CONTENT_GLOBS = { experiences: 'src/experiences/*.md' }
 
@@ -30,6 +31,9 @@ module.exports = config => {
 
   // Icon Sprite
   config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
+
+  // image
+  config.addNunjucksAsyncShortcode('image', imageShortcode)
   
   // Asset Watch Targets
   config.addWatchTarget('./src/assets')

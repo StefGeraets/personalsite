@@ -7,7 +7,7 @@ order: 2
 tech: Javascript (ES6), VueJS, ServiceWorker, REST API's, HTML (phtml), XML, CSS (Less/Sass), Magento, Git, Figma, Adobe XD, Gulp, Grunt, Webpack, yarn
 fromDate: December 2017
 toDate: Oktober 2020
-image: images/experiences/getnoticed.png
+image: assets/images/experiences/getnoticed.png
 ---
 
 - Ontwikkelen van modern start thema voor Magento 2 genaamd [Orange](https://orange.demo.lakefields.nl/)

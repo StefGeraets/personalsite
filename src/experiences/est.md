@@ -7,7 +7,7 @@ place: Leudal
 tech: jQuery, HTML, CSS/Sass, Bootstrap, Git
 fromDate: Januari 2016
 toDate: Oktober 2018
-image: images/experiences/est.png
+image: assets/images/experiences/est.png
 ---
 
 - Front-end development evenement website [est2018.eu](http://www.est2018.nl/)

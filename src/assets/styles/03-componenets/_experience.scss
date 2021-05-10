@@ -28,6 +28,13 @@
       transform: scale(1);
       transition: transform 200ms ease, box-shadow 200ms ease;
       will-change: transform, box-shadow;
+      picture {
+        overflow: hidden;
+      }
+      img {
+        border-radius: 12px;
+        max-width: unset;
+      }
     }
 
     &--content {
