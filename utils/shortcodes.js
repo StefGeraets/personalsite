@@ -13,11 +13,14 @@ module.exports = {
     console.log(src)
     let metadata = await Image(src, {
       widths: [width, 600],
-      formats: ["webp", "jpeg", "png"],
+      formats: ["webp"],
       urlPath: "/assets/images",
-      outputDir: "./dist/assets/images"
+      outputDir: "./dist/assets/images",
+      sharpWebpOptions: {
+        quality: 95,
+      },
     })
-
+    
     let imageAttributes = {
       alt,
       sizes,
