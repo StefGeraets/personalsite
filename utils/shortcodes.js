@@ -13,7 +13,7 @@ module.exports = {
     console.log(src)
     let metadata = await Image(src, {
       widths: [width, 600],
-      formats: ["avif", "jpeg"],
+      formats: ["webp", "jpeg", "png"],
       urlPath: "/assets/images",
       outputDir: "./dist/assets/images"
     })
