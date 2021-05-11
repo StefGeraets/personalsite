@@ -5,7 +5,11 @@ eleventyExcludeFromCollections: true
 
 const CACHE_NAME = 'cache-{{ build.timestamp|dateToISO }}'
 const OFFLINE_PAGE_URL = '/offline/'
-const PRECACHE_RESOURCES = []
+const PRECACHE_RESOURCES = [
+  '/assets/fonts/*',
+  '/assets/scripts/main.js',
+  '/assets/styles/main.css'
+]
 const IGNORED_HOSTS = ['localhost']
 
 // On Install

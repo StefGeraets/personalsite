@@ -13,7 +13,8 @@
   <link rel="preload" href="{{ 'assets/fonts/poppins-semibold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'assets/fonts/poppins-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}" />
+  <link rel="preload" href="{{ '/assets/styles/main.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}"></noscript>
   
   {% include "meta.njk" %}
 </head>
