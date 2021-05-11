@@ -1,6 +1,7 @@
 {
   "name":"Stef Geraets",
   "short_name":"StefGeraets",
+  "start_url": "https://www.stefgeraets.nl",
   "icons":[
     {
       "src":"/assets/images/favicon/android-chrome-192x192.png",
@@ -11,7 +12,14 @@
       "src":"/assets/images/favicon/android-chrome-512x512.png",
       "sizes":"512x512",
       "type":"image/png"
-    }],
+    },
+    {
+      "src": "/assets/images/favicon/maskable_icon_x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
   "theme_color":"#ffffff",
   "background_color":"#ffffff",
   "display":"standalone"
