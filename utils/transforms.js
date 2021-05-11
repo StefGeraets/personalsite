@@ -3,9 +3,12 @@ const critical = require('critical')
 const buildDir = 'dist'
 
 const shouldTransformHTML = (outputPath) => {
-  outputPath &&
+  if (outputPath &&
   outputPath.endsWith('.html') &&
-  process.env.ELEVENTY_ENV === 'production'
+  process.env.ELEVENTY_ENV === 'production') {
+    return true
+  }
+  return 
 }
 
 const isHomePage = (outputPath) => outputPath === `${buildDir}/index.html`
