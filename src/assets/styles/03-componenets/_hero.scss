@@ -29,7 +29,8 @@
       }
 
       &:hover,
-      &.hover {
+      &.hover,
+      &:focus {
         .tooltip-content {
           visibility: visible;
           opacity: 1;
