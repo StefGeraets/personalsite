@@ -27,26 +27,27 @@ module.exports = {
     return content
   },
 
-  critical: async function (content, outputPath) {
-    if (shouldTransformHTML(outputPath) && isHomePage(outputPath)) {
-      try {
-        const config = {
-          base: `${buildDir}/`,
-          html: content,
-          inline: true,
-          width: 1280,
-          height: 800,
-          ignore: {
-            atrule: ['@font-face'],
-          }
-        }
-        const { html } = await critical.generate(config)
-        return html
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    return content
-  },
+  // critical: async function (content, outputPath) {
+  //   if (shouldTransformHTML(outputPath) && isHomePage(outputPath)) {
+  //     try {
+  //       const config = {
+  //         base: `${buildDir}/`,
+  //         html: content,
+  //         inline: true,
+  //         width: 1280,
+  //         height: 800,
+  //         assetPaths: [`${buildDir}/assets/fonts`],
+  //         // ignore: {
+  //         //   atrule: ['@font-face'],
+  //         // }
+  //       }
+  //       const { html } = await critical.generate(config)
+  //       return html
+  //     } catch (err) {
+  //       console.error(err)
+  //     }
+  //   }
+  //   return content
+  // },
 
 }
