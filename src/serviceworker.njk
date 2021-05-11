@@ -6,11 +6,18 @@ eleventyExcludeFromCollections: true
 const CACHE_NAME = 'cache-{{ build.timestamp|dateToISO }}'
 const OFFLINE_PAGE_URL = '/offline/'
 const PRECACHE_RESOURCES = [
-  '/assets/fonts/',
-  '/assets/scripts/main.js',
-  '/assets/styles/main.css'
+  '/',
+  '/assets/fonts/poppins-bold.woff',
+  '/assets/fonts/poppins-bold.woff2',
+  '/assets/fonts/poppins-regular.woff',
+  '/assets/fonts/poppins-regular.woff2',
+  '/assets/fonts/poppins-semibold.woff',
+  '/assets/fonts/poppins-semibold.woff2',
+  '/assets/styles/main.css',
+  '/assets/scripts/main.js'
 ]
-const IGNORED_HOSTS = ['localhost']
+{# const IGNORED_HOSTS = ['localhost'] #}
+const IGNORED_HOSTS = []
 
 // On Install
 self.addEventListener('install', (event) => {

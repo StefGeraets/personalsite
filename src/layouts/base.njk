@@ -13,9 +13,8 @@
   <link rel="preload" href="{{ 'assets/fonts/poppins-semibold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'assets/fonts/poppins-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" href="{{ '/assets/styles/main.css' | url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}"></noscript>
-  
+  <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}" defer>
+
   {% include "meta.njk" %}
 </head>
 <body>
@@ -31,7 +30,7 @@
     {% include "footer.njk" %}
   </div>
 
-  <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
+  <script type="text/javascript" defer aync src="{{ '/assets/scripts/main.js' | url }}"></script>
   <script type="text/javascript">
       if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('/serviceworker.js')
