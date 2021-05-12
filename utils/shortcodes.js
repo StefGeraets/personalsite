@@ -17,7 +17,7 @@ module.exports = {
       urlPath: "/assets/images",
       outputDir: "./dist/assets/images",
       sharpWebpOptions: {
-        quality: 95,
+        quality: 85,
       },
     })
     
