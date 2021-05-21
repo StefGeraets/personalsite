@@ -12,6 +12,7 @@ const shouldTransformHTML = (outputPath) => {
 }
 
 const isHomePage = (outputPath) => outputPath === `${buildDir}/index.html`
+const isOfflinePage = (outputPath) => outputPath === `${buildDir}/offline/index.html`
 
 process.setMaxListeners(Infinity)
 module.exports = {
@@ -28,7 +29,9 @@ module.exports = {
   },
 
   critical: async function (content, outputPath) {
-    if (shouldTransformHTML(outputPath) && isHomePage(outputPath)) {
+    if (
+        shouldTransformHTML(outputPath) && isHomePage(outputPath) ||
+        shouldTransformHTML(outputPath) && isOfflinePage(outputPath)) {
       try {
         const config = {
           base: `${buildDir}/`,
