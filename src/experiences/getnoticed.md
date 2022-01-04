@@ -3,7 +3,7 @@ title: GetNoticed
 role: Magento 2 Medior Front-end Developer
 office: GetNoticed
 place: Nederweert
-order: 2
+order: 3
 tech: Javascript (ES6), VueJS, ServiceWorker, REST API's, HTML (phtml), XML, CSS (Less/Sass), Magento, Git, Figma, Adobe XD, Gulp, Grunt, Webpack, yarn
 fromDate: December 2017
 toDate: Oktober 2020

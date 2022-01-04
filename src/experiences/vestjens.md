@@ -1,6 +1,6 @@
 ---
 title: Vestjens
-order: 4
+order: 5
 role: Full-stack developer
 office: Vestjens Straw B.V.
 place: Haelen

@@ -1,6 +1,6 @@
 ---
 title: Europees Schutters Treffen
-order: 5
+order: 6
 role: Frontend developer en werkgroep-lid PR&nbsp;&amp;&nbsp;Communicatie
 office: Europees Schutters Treffen
 place: Leudal

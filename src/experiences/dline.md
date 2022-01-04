@@ -1,6 +1,6 @@
 ---
 title: Dline
-order: 6
+order: 7
 role: Part-time front-end developer
 office: Dline
 place: Helden
